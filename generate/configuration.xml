@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<configuration>
+    <classpath>
+        <entry>lib/ojdbc14.jar</entry>
+        <entry>lib/sqljdbc4.jar</entry>
+        <entry>lib/mysql-connector-java-5.1.36-bin.jar</entry>
+        <entry>lib/postgresql-8.2-505.jdbc2.jar</entry>
+    </classpath>
+    <connections>
+        <database name="dev">
+            <driverClass>org.gjt.mm.mysql.Driver</driverClass>
+            <url>jdbc:mysql://ip:port/database</url>
+            <username>userName</username>
+            <password>password</password>
+            <schema/>
+        </database>
+    </connections>
+    <tagertProject>D:\gitN\</tagertProject>
+    <basePackage>com.</basePackage>
+    <moduleName>test</moduleName>
+    <templates>
+        <template engine="freemarker" name="DB查询类" selected="true">
+            <templateFile>dbSelect.ftl</templateFile>
+            <targetPath>${tagertProject}\\src\\${basePackage}\\${moduleName}\\</targetPath>
+            <targetFileName>${table.className}.java</targetFileName>
+            <encoding>UTF-8</encoding>
+        </template>
+        <template engine="freemarker" name="DB插入类" selected="true">
+            <templateFile>dbInsert.ftl</templateFile>
+            <targetPath>${tagertProject}\\src\\${basePackage}\\${moduleName}\\</targetPath>
+            <targetFileName>${table.className}.java</targetFileName>
+            <encoding>UTF-8</encoding>
+        </template>
+        <template engine="freemarker" name="DB删除类" selected="true">
+            <templateFile>dbDelete.ftl</templateFile>
+            <targetPath>${tagertProject}\\src\\${basePackage}\\${moduleName}\\</targetPath>
+            <targetFileName>${table.className}.java</targetFileName>
+            <encoding>UTF-8</encoding>
+        </template>
+        <template engine="freemarker" name="DB修改类" selected="true">
+            <templateFile>dbUpdate.ftl</templateFile>
+            <targetPath>${tagertProject}\\src\\${basePackage}\\${moduleName}\\</targetPath>
+            <targetFileName>${table.className}.java</targetFileName>
+            <encoding>UTF-8</encoding>
+        </template>
+    </templates>
+</configuration>
