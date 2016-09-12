@@ -9,35 +9,41 @@
     <connections>
         <database name="dev">
             <driverClass>org.gjt.mm.mysql.Driver</driverClass>
-            <url>jdbc:mysql://ip:port/database</url>
-            <username>userName</username>
-            <password>password</password>
+            <url>jdbc:mysql://182.254.232.222:3306/allPay?useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false</url>
+            <username>root</username>
+            <password>kuUjd390Hbxz</password>
             <schema/>
         </database>
     </connections>
-    <tagertProject>D:\gitN\</tagertProject>
-    <basePackage>com.</basePackage>
-    <moduleName>test</moduleName>
+    <tagertProject>D:\gitN\allpay\pay_payoff_plugin\</tagertProject>
+    <basePackage>com.xpg.pay.plugin.service.business</basePackage>
+    <moduleName>orderTest</moduleName>
     <templates>
-        <template engine="freemarker" name="DB查询类" selected="true">
+        <template engine="freemarker" name="业务类" selected="true">
+            <templateFile>business.ftl</templateFile>
+            <targetPath>${tagertProject}\\src\\${basePackage}\\${moduleName}\\</targetPath>
+            <targetFileName>${table.className}.java</targetFileName>
+            <encoding>UTF-8</encoding>
+        </template>
+        <template engine="freemarker" name="DB查询类" selected="false">
             <templateFile>dbSelect.ftl</templateFile>
             <targetPath>${tagertProject}\\src\\${basePackage}\\${moduleName}\\</targetPath>
             <targetFileName>${table.className}.java</targetFileName>
             <encoding>UTF-8</encoding>
         </template>
-        <template engine="freemarker" name="DB插入类" selected="true">
+        <template engine="freemarker" name="DB插入类" selected="false">
             <templateFile>dbInsert.ftl</templateFile>
             <targetPath>${tagertProject}\\src\\${basePackage}\\${moduleName}\\</targetPath>
             <targetFileName>${table.className}.java</targetFileName>
             <encoding>UTF-8</encoding>
         </template>
-        <template engine="freemarker" name="DB删除类" selected="true">
+        <template engine="freemarker" name="DB删除类" selected="false">
             <templateFile>dbDelete.ftl</templateFile>
             <targetPath>${tagertProject}\\src\\${basePackage}\\${moduleName}\\</targetPath>
             <targetFileName>${table.className}.java</targetFileName>
             <encoding>UTF-8</encoding>
         </template>
-        <template engine="freemarker" name="DB修改类" selected="true">
+        <template engine="freemarker" name="DB修改类" selected="false">
             <templateFile>dbUpdate.ftl</templateFile>
             <targetPath>${tagertProject}\\src\\${basePackage}\\${moduleName}\\</targetPath>
             <targetFileName>${table.className}.java</targetFileName>

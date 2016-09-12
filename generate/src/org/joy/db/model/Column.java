@@ -46,15 +46,15 @@ public class Column implements Serializable {
 
     private String            remarks;
 
-    protected int             jdbcType;
+    protected int            jdbcType;
     protected String          jdbcTypeName;
 
     private String            javaProperty;
     private String            javaType;
     private String            fullJavaType;
     private String            editor;
-    private boolean           display          = true;
-    private boolean           searchable;
+    private boolean          display          = true;
+    private boolean          searchable;
     private String            dict = "";
 
     public Column(String columnName){

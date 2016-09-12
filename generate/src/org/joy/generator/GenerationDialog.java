@@ -51,6 +51,8 @@ public class GenerationDialog extends JDialog {
     private JTextField        textTableAlias;
     private EngineBuilder     engineBuilder;
     private JTextField        textDesc;
+    private JTextField        textServiceName;
+    private JTextField        textDbName;
 
     /**
      * Create the dialog.
@@ -136,13 +138,34 @@ public class GenerationDialog extends JDialog {
 
         JLabel lblClassDesc = new JLabel("说明");
         lblClassDesc.setHorizontalAlignment(SwingConstants.TRAILING);
-        lblClassDesc.setBounds(200, 350, 54, 25);
+        lblClassDesc.setBounds(28, 412, 54, 25);
         contentPanel.add(lblClassDesc);
 
         textDesc = new JTextField();
         textDesc.setEditable(true);
-        textDesc.setBounds(275, 347, 100, 50);
+        textDesc.setBounds(92, 412, 200, 25);
         contentPanel.add(textDesc);
+
+        JLabel lblServiceName = new JLabel("service类");
+        lblServiceName.setHorizontalAlignment(SwingConstants.TRAILING);
+        lblServiceName.setBounds(28, 453, 54, 25);
+        contentPanel.add(lblServiceName);
+
+        textServiceName = new JTextField();
+        textServiceName.setEditable(true);
+        textServiceName.setBounds(92, 453, 130, 25);
+        contentPanel.add(textServiceName);
+
+        JLabel lblDbName = new JLabel("Db类");
+        lblDbName.setHorizontalAlignment(SwingConstants.TRAILING);
+        lblDbName.setBounds(28, 494, 54, 25);
+        contentPanel.add(lblDbName);
+
+        textDbName = new JTextField();
+        textDbName.setEditable(true);
+        textDbName.setBounds(92, 494, 130, 25);
+        contentPanel.add(textDbName);
+
 
         JPanel buttonPane = new JPanel();
         getContentPane().add(buttonPane, BorderLayout.SOUTH);
@@ -240,11 +263,13 @@ public class GenerationDialog extends JDialog {
             return;
         }
         String desc = textDesc.getText();
+        String dbName = textDbName.getText();
+        String serviceName = textServiceName.getText();
         
-        processSelectedTemplates(selectedValues, targetProject, basePackage, moduleName, tableAlias, desc);
+        processSelectedTemplates(selectedValues, targetProject, basePackage, moduleName, tableAlias, desc, dbName, serviceName);
     }
 
-    private void processSelectedTemplates(Object[] selectedTemplateElements, String targetProject, String basePackage, String moduleName, String tableAlias, String desc){
+    private void processSelectedTemplates(Object[] selectedTemplateElements, String targetProject, String basePackage, String moduleName, String tableAlias, String desc, String dbName, String serviceName){
         configuration.setTagertProject(targetProject);
         configuration.setBasePackage(basePackage);
         configuration.setModuleName(moduleName);
@@ -255,6 +280,8 @@ public class GenerationDialog extends JDialog {
         model.put("tagertProject", configuration.getTagertProject());
         model.put("basePackage", configuration.getBasePackage());
         model.put("moduleName", configuration.getModuleName());
+        model.put("dbName", dbName);
+        model.put("serviceName", serviceName);
         model.put("table", tableModel);
 
         for (TemplateElement templateElement : configuration.getTemplates()) {
