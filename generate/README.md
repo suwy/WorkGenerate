@@ -1,6 +1,6 @@
-CodeGenerator
+WorkGenerate
 ====
-这是一个使用 Freemarker 和 Velocity 模板来生代码的工具。
+这是一个使用CodeGenerator的框架做的 Freemarker 和 Velocity 模板来生代码的工具。
 
 本生成器只是将数据库中的表结构数据提取出来，然后将这份结构模型提交给模板引擎, 根据你自定义的模板生成你需要的代码。
 
@@ -13,11 +13,11 @@ CodeGenerator
             <entry>lib/mysql-connector-java-5.1.36-bin.jar</entry>
         </classpath>
         <!-- 代码生成目标基准目录 -->
-        <tagertProject>D:\temp</tagertProject>
+        <tagertProject>D:\gitN\allpay\db-plugin\db_payoff\</tagertProject>
         <!-- 基本包 -->
-        <basePackage>org.joy</basePackage>
+        <basePackage>com.xpg.pay.plugin.dao.business</basePackage>
         <!-- 模块名 -->
-        <moduleName>test</moduleName>
+        <moduleName>payoff</moduleName>
         <templates>
             <!-- 模板 ，手动添加 -->
             <template name="实体类" engine="freemarker">
@@ -145,4 +145,4 @@ CodeGenerator
 
 
 ##作者
-ptma@163.com
+suwy2013@gmail.com
