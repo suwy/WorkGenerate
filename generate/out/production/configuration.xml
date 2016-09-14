@@ -14,12 +14,31 @@
             <password>kuUjd390Hbxz</password>
             <schema/>
         </database>
+        <database name="dev2">
+            <driverClass>org.gjt.mm.mysql.Driver</driverClass>
+            <url>jdbc:mysql://dev.allpaycloud.cn:3308/allpay_management?useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false</url>
+            <username>root</username>
+            <password>78iHi2Tt5Zh</password>
+            <schema/>
+        </database>
     </connections>
-    <tagertProject>D:\gitN\allpay\pay_payoff_plugin\</tagertProject>
-    <basePackage>com.xpg.pay.plugin.service.business</basePackage>
-    <moduleName>orderTest</moduleName>
+    <tagertProject>D:\gitN\allpay_management_cloud\</tagertProject>
+    <basePackage>com.xpg.modules.web.</basePackage>
+    <moduleName>devicerate</moduleName>
     <templates>
-        <template engine="freemarker" name="业务类" selected="true">
+        <template engine="freemarker" name="控制层" selected="true">
+            <templateFile>allpayMgntController.ftl</templateFile>
+            <targetPath>${tagertProject}\\src\\${basePackage}\\${moduleName}\\</targetPath>
+            <targetFileName>${table.className}.java</targetFileName>
+            <encoding>UTF-8</encoding>
+        </template>
+        <template engine="freemarker" name="模型" selected="false">
+            <templateFile>allpayMgntModel.ftl</templateFile>
+            <targetPath>${tagertProject}\\src\\${basePackage}\\${moduleName}\\</targetPath>
+            <targetFileName>${table.className}.java</targetFileName>
+            <encoding>UTF-8</encoding>
+        </template>
+        <template engine="freemarker" name="业务类" selected="false">
             <templateFile>business.ftl</templateFile>
             <targetPath>${tagertProject}\\src\\${basePackage}\\${moduleName}\\</targetPath>
             <targetFileName>${table.className}.java</targetFileName>

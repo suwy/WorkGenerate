@@ -99,6 +99,9 @@ public class FreeMarkerImpl implements TemplateEngine {
             if(templateElement.getTemplateFile().contains("Insert")) {
                 targetFileName = "Add"+targetFileName;
             }
+            if(templateElement.getTemplateFile().contains("Controller")) {
+                targetFileName = targetFileName.replace(".","Controller.");
+            }
 
             File file = new File(targetPath + File.separator + targetFileName);
             File directory = new File(targetPath);
