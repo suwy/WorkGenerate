@@ -26,6 +26,12 @@
     <basePackage>com.xpg.modules.web.</basePackage>
     <moduleName>devicerate</moduleName>
     <templates>
+        <template engine="velocity" name="页面_form" selected="true">
+            <templateFile>form.vm</templateFile>
+            <targetPath>${tagertProject}\\src\\${basePackage}\\${moduleName}\\</targetPath>
+            <targetFileName>${table.className}.java</targetFileName>
+            <encoding>UTF-8</encoding>
+        </template>
         <template engine="freemarker" name="控制层" selected="true">
             <templateFile>allpayMgntController.ftl</templateFile>
             <targetPath>${tagertProject}\\src\\${basePackage}\\${moduleName}\\</targetPath>

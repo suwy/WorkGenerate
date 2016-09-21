@@ -16,17 +16,36 @@
         </database>
         <database name="dev2">
             <driverClass>org.gjt.mm.mysql.Driver</driverClass>
+            <url>jdbc:mysql://dev.allpaycloud.cn:3308/allpay_yewuyun?useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false</url>
+            <username>root</username>
+            <password>78iHi2Tt5Zh</password>
+            <schema/>
+        </database>
+        <database name="dev-allpay_management">
+            <driverClass>org.gjt.mm.mysql.Driver</driverClass>
             <url>jdbc:mysql://dev.allpaycloud.cn:3308/allpay_management?useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false</url>
             <username>root</username>
             <password>78iHi2Tt5Zh</password>
             <schema/>
         </database>
     </connections>
-    <tagertProject>D:\gitN\allpay_management_cloud\</tagertProject>
-    <basePackage>com.xpg.modules.web.</basePackage>
-    <moduleName>devicerate</moduleName>
+    <tagertProject>D:\gitN\allpay_management_cloud\WebRoot\modules\web\</tagertProject>
+    <basePackage>com</basePackage>
+    <moduleName>deviceconfig</moduleName>
     <templates>
-        <template engine="freemarker" name="控制层" selected="true">
+        <template engine="velocity" name="page" selected="true">
+            <templateFile>form.vm</templateFile>
+            <targetPath>${tagertProject}\\${moduleName}\\</targetPath>
+            <targetFileName>_page.html</targetFileName>
+            <encoding>UTF-8</encoding>
+        </template>
+        <template engine="velocity" name="index" selected="false">
+            <templateFile>index.vm</templateFile>
+            <targetPath>${tagertProject}\\${moduleName}\\</targetPath>
+            <targetFileName>_index.html</targetFileName>
+            <encoding>UTF-8</encoding>
+        </template>
+        <template engine="freemarker" name="控制层" selected="false">
             <templateFile>allpayMgntController.ftl</templateFile>
             <targetPath>${tagertProject}\\src\\${basePackage}\\${moduleName}\\</targetPath>
             <targetFileName>${table.className}.java</targetFileName>

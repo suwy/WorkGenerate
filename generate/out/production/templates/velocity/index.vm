@@ -1,0 +1,44 @@
+<#include "/WEB-INF/templete/_list.html"/>
+<@layout>
+<div class="row">
+    <form id="_query" class="form-horizontal m-t" data-url="${_dataUrl}">
+        <div class="form-group">
+            <label class="col-sm-1 control-label">查询内容</label>
+            <div class="col-sm-2">
+                <input data-name="fuzzyQuery" class="form-control">
+            </div>
+            <label class="col-sm-1 control-label">下拉框</label>
+            <div class="col-sm-1">
+                <select class="form-control" data-name="***">
+                    <option value="">全部</option>
+                    <option value="1">1</option>
+                    <option value="0">0</option>
+                </select>         
+            </div>
+            <div class="col-sm-7">
+                <div class="btn-group pull-right">
+                    <button id="btn-query" class="btn btn-primary" type="button"><i class="fa fa-search"></i> 查询</button>
+                    <button class="btn btn-default" type="reset"><i class="fa fa-refresh"></i> 清除</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<div id="_content" class="table-responsive">
+    <table class="table table-striped" style="width: 150%;">
+        <thead>
+        <tr>
+            <th>序</th>
+            <th class="handle">操作</th>
+#foreach($column in $table.columns)
+            <th>${column.remarks}</th>
+#end
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
+</@layout>
+
+

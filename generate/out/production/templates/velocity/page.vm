@@ -1,0 +1,18 @@
+<\#include "/WEB-INF/templete/_page.html"/>
+<\#if _page.getList().size()!=0>
+<#list _page.getList() as x>
+    <tr>
+        <td>${(_page.pageNumber-1)*_page.pageSize+x_index+1}</td>
+        <td>
+            <button type="button" class="btn-showPage btn btn-white btn-sm" data-url="_form?id=${(x.id)!}">操作按钮</button>
+        </td>
+    #foreach($column in $table.columns)
+        <td>${(x.${column.columnName})!}</td>
+    #end
+    </tr>
+</#list>
+<\#else>
+<tr>
+    <td colspan="$table.columns.size()" align="center">没有找到匹配的记录</td>
+</tr>
+</\#if>

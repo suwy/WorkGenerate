@@ -33,7 +33,7 @@ public class ${table.className}Controller extends BaseTempleteController<${table
         render("_index.html");
     }
 
-    /*详情*/
+    /*内页详情*/
     public void form() {
         setAttr("_form", controlerUrl());
         render("_form.html");
