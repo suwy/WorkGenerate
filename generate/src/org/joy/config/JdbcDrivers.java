@@ -66,7 +66,7 @@ public class JdbcDrivers implements Serializable {
         try {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder docBuilder = factory.newDocumentBuilder();
-            Document doc = docBuilder.parse(JdbcDrivers.class.getResourceAsStream("jdbcDrivers.xml"));
+            Document doc = docBuilder.parse(JdbcDrivers.class.getResourceAsStream("templates/jdbcDrivers.xml"));
 //            String jdbcDrivePath = JdbcDrivers.class.getProtectionDomain().getCodeSource().getLocation().getFile().replace("generate/","")+"jdbcDrivers.xml";
 //            System.out.println("show jdbc drivers:"+jdbcDrivePath);
 //            Document doc = docBuilder.parse(jdbcDrivePath);

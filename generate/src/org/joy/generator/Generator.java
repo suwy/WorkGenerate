@@ -56,7 +56,7 @@ import java.util.Map.Entry;
 
 public class Generator extends JFrame {
 
-    private static final Logger    LOGGER                = Logger.getLogger(Generator.class);
+//    private static final Logger    LOGGER                = Logger.getLogger(Generator.class);
 
     private static final long      serialVersionUID      = -7813705897974255551L;
 
@@ -274,7 +274,8 @@ public class Generator extends JFrame {
                 ObjectFactory.addExternalClassLoader(classLoader);
             }
         } catch (Exception e) {
-            LOGGER.info(e.getMessage(), e);
+//            LOGGER.info(e.getMessage(), e);
+            System.out.println(e);
             JOptionPane.showMessageDialog(this, e.getMessage(), "错误", JOptionPane.ERROR_MESSAGE);
         }
 
@@ -282,7 +283,8 @@ public class Generator extends JFrame {
         try {
             typeMapping.loadMappgin();
         } catch (Exception e) {
-            LOGGER.info(e.getMessage(), e);
+//            LOGGER.info(e.getMessage(), e);
+            System.out.println(e);
             JOptionPane.showMessageDialog(this, e.getMessage(), "错误", JOptionPane.ERROR_MESSAGE);
         }
 
@@ -330,7 +332,8 @@ public class Generator extends JFrame {
             tablesTreeModel.reload();
             rs.close();
         } catch (SQLException e) {
-            LOGGER.info(e.getMessage(), e);
+//            LOGGER.info(e.getMessage(), e);
+            System.out.println(e);
             JOptionPane.showMessageDialog(this, e.getMessage(), "错误", JOptionPane.ERROR_MESSAGE);
         }
     }
@@ -340,7 +343,8 @@ public class Generator extends JFrame {
         if (imgURL != null) {
             return new ImageIcon(imgURL);
         } else {
-            LOGGER.error("Couldn't find file: " + path);
+//            LOGGER.error("Couldn't find file: " + path);
+            System.out.println("Couldn't find file: " + path);
             return null;
         }
     }
@@ -379,7 +383,8 @@ public class Generator extends JFrame {
                     loadTableTree(databaseElement.getSchema());
                 }
             } catch (ApplicationException e) {
-                LOGGER.info(e.getMessage(), e);
+//                LOGGER.info(e.getMessage(), e);
+                System.out.println(e);
                 JOptionPane.showMessageDialog(this, e.getMessage(), "错误", JOptionPane.ERROR_MESSAGE);
             }
         }
@@ -527,7 +532,8 @@ public class Generator extends JFrame {
             resizeTableGrid(true);
             btnGenerate.setEnabled(true);
         } catch (Exception e) {
-            LOGGER.info(e.getMessage(), e);
+//            LOGGER.info(e.getMessage(), e);
+            System.out.println(e);
             JOptionPane.showMessageDialog(this, e.getMessage(), "错误", JOptionPane.ERROR_MESSAGE);
         }
     }
@@ -560,7 +566,8 @@ public class Generator extends JFrame {
                     frame.contentSplitPane.setDividerLocation(0.25);
 
                 } catch (Exception e) {
-                    LOGGER.info(e.getMessage(), e);
+//                    LOGGER.info(e.getMessage(), e);
+                    System.out.println(e);
                 }
             }
         });
@@ -612,7 +619,8 @@ public class Generator extends JFrame {
 
         @Override
         public void taskError(Exception e) {
-            LOGGER.info(e.getMessage(), e);
+//            LOGGER.info(e.getMessage(), e);
+            System.out.println(e);
             JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }

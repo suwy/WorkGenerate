@@ -30,7 +30,7 @@ public class TypeMapping implements Serializable {
 
     private static final long serialVersionUID = 8573950623347746321L;
 
-    private static final String  MAPING_FILE = "TypeMapping.xml";
+    private static final String  MAPING_FILE = "templates/TypeMapping.xml";
 
     private String               mappginFile;
 
