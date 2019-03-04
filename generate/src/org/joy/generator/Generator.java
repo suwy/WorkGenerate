@@ -34,7 +34,6 @@ import org.joy.util.ClassloaderUtility;
 import org.joy.util.ObjectFactory;
 import org.joy.util.StringUtil;
 
-import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
@@ -44,13 +43,10 @@ import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeCellRenderer;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreePath;
-import java.awt.*;
-import java.awt.event.*;
 import java.io.File;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.*;
 import java.util.List;
 import java.util.Map.Entry;
 
@@ -546,8 +542,8 @@ public class Generator extends JFrame {
             BeautyEyeLNFHelper.frameBorderStyle = BeautyEyeLNFHelper.FrameBorderStyle.translucencySmallShadow;
             org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper.launchBeautyEyeLNF();
         } catch (Exception e) {
+            e.printStackTrace();
         }
-
         EventQueue.invokeLater(new Runnable() {
 
             @Override
