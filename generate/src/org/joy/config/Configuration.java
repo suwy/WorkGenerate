@@ -48,7 +48,7 @@ public class Configuration {
 
     private static final Logger   LOGGER             = Logger.getLogger(Configuration.class);
 
-    private static final String   CONFIGURATION_FILE = "configuration.xml";
+    private static final String   CONFIGURATION_FILE = "templates/configuration.xml";
     private String                configurationFile;
     private List<DatabaseElement> connectionHistory;
     private List<String>          classPathEntries;
